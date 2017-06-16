@@ -1,5 +1,22 @@
 module main;
 
+class Point
+{
+    this (int x, int y)
+    {
+        X = x;
+        Y = y;
+    }
+    
+    int X;
+    int Y;
+    
+    int Sum ()
+    {
+        return X + Y;
+    }
+}
+
 private int Sum (int x, int y)
 {
     auto result = 0;
@@ -12,6 +29,8 @@ private int Sum (int x, int y)
 void Main()
 {
     int y = 0;
+    
+    scope p = new Point(2,2);
     
     y++;
     
