@@ -1,0 +1,6 @@
+link.ld
+build/
+\.vscode/
+*.map
+.as/
+.avalon/
