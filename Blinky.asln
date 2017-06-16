@@ -1,0 +1,6 @@
+{
+  "StartupItem": "Blinky",
+  "Projects": [
+    "Blinky/Blinky.acproj"
+  ]
+}

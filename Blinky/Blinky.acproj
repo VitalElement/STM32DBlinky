@@ -1,0 +1,58 @@
+{
+  "References": [],
+  "Toolchain": "AvalonStudio.Toolchains.LDC.LDCToolchain",
+  "Debugger2": "AvalonStudio.Debugging.GDB.JLink.JLinkDebugger",
+  "ExcludedFiles": [],
+  "Type": "Executable",
+  "StaticLibraries": [],
+  "Executable": "build/bin/Blinky.elf",
+  "ToolchainSettings": {
+    "AvalonStudio.Toolchains.GCC.GccToolchainSettings": {
+      "CompileSettings": {
+        "Defines": [],
+        "Includes": [],
+        "DebugInformation": true,
+        "Rtti": false,
+        "Exceptions": false,
+        "CustomFlags": "-march=thumb -mcpu=cortex-m4 -mtriple=thumb-none-linux-eabi  -g -betterC",
+        "CLanguageStandard": "Default",
+        "CppLanguageStandard": "Default",
+        "Optimization": "None",
+        "OptimizationPreference": "None",
+        "Fpu": "Hard"
+      },
+      "LinkSettings": {
+        "LinkedLibraries": [],
+        "LinkerScripts": [
+          "link.ld"
+        ],
+        "UseMemoryLayout": false,
+        "DiscardUnusedSections": true,
+        "NotUseStandardStartupFiles": true,
+        "Library": "None",
+        "SelectedDeviceId": 0,
+        "InRom1Start": 0,
+        "InRom1Size": 0,
+        "InRom2Start": 0,
+        "InRom2Size": 0,
+        "InRam1Start": 0,
+        "InRam1Size": 0,
+        "InRam2Start": 0,
+        "InRam2Size": 0,
+        "DebugInRam": false,
+        "MiscLinkerArguments": "-mcpu=cortex-m4 -Wl,-Map,output.map -nostdlib"
+      }
+    }
+  },
+  "DebugSettings": {
+    "AvalonStudio.Debugging.GDB.JLink.JLinkSettings": {
+      "Interface": "SWD",
+      "TargetDevice": "STM32F407VG",
+      "DeviceKey": "STM32F407VG",
+      "SpeedkHz": 4000
+    }
+  },
+  "Settings": {
+    "AvalonStudio.Projects.CPlusPlus.BuildEventsSettings": {}
+  }
+}
