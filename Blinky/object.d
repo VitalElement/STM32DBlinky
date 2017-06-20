@@ -24,6 +24,8 @@ class TypeInfo
         //DMD complains if this doesn't exist
         size_t getHash(in void* p) @trusted nothrow const { return cast(size_t)p; }
     }
+    
+    abstract const(void)[] initializer() nothrow pure const @safe @nogc;
 }
 
 class TypeInfo_Typedef
@@ -112,6 +114,11 @@ class TypeInfo_Class : TypeInfo
     {
         
         ubyte[68] ignore;
+    }
+    
+    override const(void)[] initializer() const @trusted
+    {
+        return (cast(void *)null)[0 .. Object.sizeof];
     }
 }
 

@@ -134,9 +134,11 @@ mixin(DefaultHandler!("FPU_IRQHandler"));
     }
 }
 
+@(section(".stack")) __gshared static long[0x800] stack;
+
 @(section(".interrupt_vector"))
 VectorFunc[98] interruptVectorTable = [
-    cast(VectorFunc)&_stackStart,                                                        /* -16 $0000 Initial Stack Pointer */
+    cast(VectorFunc)&stack,                                                        /* -16 $0000 Initial Stack Pointer */
     &Reset_Handler,                                                                    /* -15 $0004 Reset Vector */
     &NMI_Handler,                                                                    /* -14 $0008 Non Maskable Interrupt Vector */
     &HardFault_Handler,                                                                /* -13 $000c Hard Fault Vector */
