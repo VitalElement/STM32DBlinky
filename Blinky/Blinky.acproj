@@ -14,7 +14,7 @@
         "DebugInformation": true,
         "Rtti": false,
         "Exceptions": false,
-        "CustomFlags": "-march=thumb -mcpu=cortex-m4 -mtriple=thumb-none-linux-eabi  -g -betterC",
+        "CustomFlags": "-march=thumb -mcpu=cortex-m4 -mtriple=thumb-none-linux-eabi  -g  -debuglib= -conf= -oftest -betterC -release",
         "CLanguageStandard": "Default",
         "CppLanguageStandard": "Default",
         "Optimization": "None",
