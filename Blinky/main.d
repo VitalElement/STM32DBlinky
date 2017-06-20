@@ -1,6 +1,24 @@
 module main;
 
-class Point
+final abstract class TestClass1 { }
+final abstract class TestClass2 { }
+final abstract class TestClass3 { }
+final abstract class TestClass4 { }
+final abstract class TestClass5 { }
+final abstract class TestClass6 { }
+final abstract class TestClass7 { }
+final abstract class TestClass8 { }
+final abstract class TestClass9 { }
+
+extern (C) void _d_callfinalizer (void *p)
+{
+}
+
+extern (C) void _d_eh_resume_unwind (void *p)
+{
+}
+
+class Point 
 {
     this (int x, int y)
     {
@@ -8,44 +26,34 @@ class Point
         Y = y;
     }
     
-    int X;
-    int Y;
-    
     int Sum ()
     {
-        return X + Y;
+        int result = 0;
+        
+        result += X;
+        result += Y;
+        
+        return result;
     }
-}
-
-private int Sum (int x, int y)
-{
-    auto result = 0;
     
-    result = x + y;
-    
-    return result;
+    int X;
+    int Y;
 }
 
 void Main()
 {
-    int y = 0;
-    
     scope p = new Point(2,2);
     
-    y++;
+    int sum = p.Sum();
     
-    y++;
+    p.X = 1;
+    p.Y = 1;
     
-    y = Sum(y ,4);
+    int sum2 = p.Sum();
     
-    if(y > 4)
-    {
-        y--;
-    }
-    else
-    {
-        y++;
-    }
+    int x = 0; 
+    
+    x++;
 }
 
 
